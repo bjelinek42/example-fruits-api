@@ -11,5 +11,11 @@ class FruitsController < ApplicationController
       quality: params[:quality]
     )
     fruit.save
+    render json: fruit
+  end
+
+  def show
+    fruit = Fruit.find(params[:id])
+    render json: fruit
   end
 end
